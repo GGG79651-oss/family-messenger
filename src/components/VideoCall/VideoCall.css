@@ -1,0 +1,100 @@
+.video-call-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.remote-video {
+  flex: 1;
+  width: 100%;
+  object-fit: cover;
+  background: #111;
+}
+
+.call-status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 20px 16px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: white;
+}
+
+.call-status-bar span:first-child {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.call-status-text {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.local-video {
+  position: absolute;
+  top: 100px;
+  right: 16px;
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: #333;
+}
+
+.call-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 20px max(20px, env(safe-area-inset-bottom));
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ctrl-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50px;
+  padding: 14px 20px;
+  color: white;
+  font-size: 22px;
+  min-width: 72px;
+  transition: background 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.ctrl-btn span {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.ctrl-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.ctrl-btn.ctrl-off {
+  background: rgba(255,255,255,0.08);
+  opacity: 0.6;
+}
+
+.end-call-btn {
+  background: var(--accent) !important;
+  min-width: 80px;
+}
+
+.end-call-btn:hover {
+  background: var(--accent-hover) !important;
+}
